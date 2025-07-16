@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stefania Aimara - Mis 15</title>
+  <style>
+    :root {
+      --verde: #6aaf76;
+      --malva: #b78db3;
+      --blanco: #ffffff;
+      --marron: #7c4b3a;
+      --dorado: #d4af37;
+      --beige: #f5efe6;
+      --rosado: #f8e1e7;
+      --negro: #1a1a1a;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    html, body {
+      scroll-behavior: smooth;
+      background-color: var(--beige);
+      color: #333;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    section {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--malva), var(--rosado));
+      color: var(--blanco);
+    }
+    .countdown {
+      background: var(--negro);
+      color: var(--blanco);
+      min-height: auto;
+      padding: 40px 20px;
+    }
+    .phrase {
+      background: var(--rosado);
+    }
+    .info {
+      background: var(--beige);
+    }
+    .gifts {
+      background: #f9f6f1;
+    }
+    .overlay {
+      max-width: 800px;
+      width: 100%;
+      padding: 0 16px;
+    }
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--malva);
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      columns: 2;
+      column-gap: 2rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: var(--marron);
+      text-decoration: underline;
+    }
+    .countdown-timer {
+      font-size: 2rem;
+      font-weight: bold;
+      background: var(--negro);
+      padding: 10px 30px;
+      border-radius: 8px;
+      border: 2px solid var(--malva);
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .gallery {
+      background: #111;
+      padding: 60px 20px;
+      color: var(--blanco);
+    }
+    .gallery h2 {
+      margin-bottom: 2rem;
+      color: var(--dorado);
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 16px;
+      max-width: 100%;
+      padding-bottom: 20px;
+    }
+    .carousel img {
+      flex: 0 0 auto;
+      width: 280px;
+      max-width: 90vw;
+      border-radius: 12px;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+    .music-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .music-button a {
+      background-color: var(--malva);
+      color: var(--blanco);
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+    .music-button a:hover {
+      background-color: var(--marron);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .countdown-timer {
+        font-size: 1.4rem;
+        padding: 8px 20px;
+      }
+      ul {
+        columns: 1;
+      }
+      .carousel img {
+        width: 240px;
+      }
+      .music-button a {
+        padding: 8px 12px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="music-button">
+    <a href="https://www.youtube.com/watch?v=5qap5aO4i9A" target="_blank">🎵</a>
+  </div>
+
+  <section class="hero">
+    <div class="overlay">
+      <h1>Stefania Aimara Maldonado</h1>
+      <h2>Mis 15 años</h2>
+      <p>2 de agosto - 20 hs<br />AOMA La Calera, Córdoba</p>
+    </div>
+  </section>
+
+  <section class="countdown">
+    <div class="overlay">
+      <h2>Faltan...</h2>
+      <div class="countdown-timer" id="timer">00d 00h 00m 00s</div>
+    </div>
+  </section>
+
+  <section class="phrase">
+    <div class="overlay">
+      <h2>Frase personalizada</h2>
+      <p>"Frase provisoria, después la cambio..."</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Mis momentos</h2>
+    <div class="carousel">
+      <img src="img1.jpg" alt="Imagen 1">
+      <img src="img2.jpg" alt="Imagen 2">
+      <img src="img3.jpg" alt="Imagen 3">
+      <img src="img4.jpg" alt="Imagen 4">
+      <img src="img5.jpg" alt="Imagen 5">
+    </div>
+  </section>
+
+  <section class="info">
+    <div class="overlay">
+      <h2>Dress code</h2>
+      <p>Casual o formal a elección</p>
+
+      <h2>Confirmación de asistencia</h2>
+      <p>Hasta el 26 de julio al <a href="https://wa.me/543549635123" target="_blank">3549 635123</a></p>
+
+      <h2>Redes y recuerdos</h2>
+      <p><strong>Alias MP:</strong> xavier.di</p>
+      <p>Subí tus fotos con el hashtag <strong>#Stefi15</strong></p>
+      <p><a href="https://googledrive.com" target="_blank">Subilas también a esta carpeta</a></p>
+    </div>
+  </section>
+
+  <section class="gifts">
+    <div class="overlay">
+      <h2>¿No sabés qué regalarme?</h2>
+      <p>Acá te dejo una lista de deseos ✨</p>
+      <ul>
+        <li>1. Perfume</li>
+        <li>2. Zapatillas</li>
+        <li>3. Pulsera</li>
+        <li>4. Auriculares</li>
+        <li>5. Remera con diseño</li>
+        <li>6. Pijama lindo</li>
+        <li>7. Almohadón decorativo</li>
+        <li>8. Cosas de papelería</li>
+        <li>9. Libros</li>
+        <li>10. Entradas para el cine</li>
+        <li>11. Set de maquillaje</li>
+        <li>12. Mochila o bolso</li>
+        <li>13. Algo hecho a mano</li>
+        <li>14. Ropa oversize</li>
+        <li>15. Lo que elijas con cariño</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    // Cuenta regresiva
+    const countdown = () => {
+      const eventDate = new Date("2025-08-02T20:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = eventDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      document.getElementById("timer").innerText = `${d}d ${h}h ${m}m ${s}s`;
+    };
+
+    setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
