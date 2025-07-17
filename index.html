@@ -58,6 +58,9 @@
     .gifts {
       background: #f9f6f1;
     }
+    .alias {
+      background: var(--rosado);
+    }
     .overlay {
       max-width: 800px;
       width: 100%;
@@ -85,8 +88,7 @@
       list-style: none;
       padding: 0;
       text-align: left;
-      columns: 2;
-      column-gap: 2rem;
+      margin-top: 1rem;
     }
     ul li {
       margin-bottom: 0.5rem;
@@ -141,20 +143,20 @@
       right: 20px;
       z-index: 1000;
     }
-    .music-button a {
+    .music-button button {
       background-color: var(--malva);
       color: var(--blanco);
       padding: 10px 16px;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       transition: background-color 0.3s ease;
     }
-    .music-button a:hover {
+    .music-button button:hover {
       background-color: var(--marron);
     }
-
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -166,32 +168,34 @@
         font-size: 1.4rem;
         padding: 8px 20px;
       }
-      ul {
-        columns: 1;
-      }
       .carousel img {
         width: 240px;
       }
-      .music-button a {
+      .music-button button {
         padding: 8px 12px;
         font-size: 1rem;
+      }
+      ul {
+        padding-left: 0;
       }
     }
   </style>
 </head>
 <body>
   <div class="music-button">
-    <a href="https://www.youtube.com/watch?v=5qap5aO4i9A" target="_blank">🎵</a>
+    <button onclick="document.getElementById('bg-music').play()">🎵 Play</button>
+    <audio id="bg-music" src="musica.mp4" loop></audio>
   </div>
 
   <section class="hero">
     <div class="overlay">
       <h1>Stefania Aimara Maldonado</h1>
       <h2>Mis 15 años</h2>
-      <p>2 de agosto - 20 hs<br />AOMA La Calera, Córdoba</p>
+      <p>2 de agosto - 20 hs<br/>
+        <a href="https://maps.app.goo.gl/zmtt384UaQRE7Hgz7" target="_blank">Salón AOMA La Calera</a>
+      </p>
     </div>
   </section>
-
   <section class="countdown">
     <div class="overlay">
       <h2>Faltan...</h2>
@@ -201,8 +205,13 @@
 
   <section class="phrase">
     <div class="overlay">
-      <h2>Frase personalizada</h2>
-      <p>"Frase provisoria, después la cambio..."</p>
+      <h2>Te invito a ser parte de mi gran día</h2>
+      <p>Jugaré a ser princesa por una noche...<br>
+      Y quiero compartir ese sueño contigo,<br>
+      Con risas, abrazos y mucho amor.<br>
+      En compañía de quienes más quiero,<br>
+      Haremos de esta noche algo mágico,<br>
+      Un momento grabado eterno en mi corazón.</p>
     </div>
   </section>
 
@@ -219,45 +228,44 @@
 
   <section class="info">
     <div class="overlay">
-      <h2>Dress code</h2>
+      <h2>Codigo De Vestimenta</h2>
       <p>Casual o formal a elección</p>
 
       <h2>Confirmación de asistencia</h2>
       <p>Hasta el 26 de julio al <a href="https://wa.me/543549635123" target="_blank">3549 635123</a></p>
 
       <h2>Redes y recuerdos</h2>
-      <p><strong>Alias MP:</strong> xavier.di</p>
-      <p>Subí tus fotos con el hashtag <strong>#Stefi15</strong></p>
-      <p><a href="https://googledrive.com" target="_blank">Subilas también a esta carpeta</a></p>
+      <p><strong>Subí tus fotos con el hashtag</strong> #Stefi15</p>
+      <p><a href="https://drive.google.com/drive/folders/1UXIoQCPrdCA3ViVTjp6Ng3uwWvE5OSPu?usp=sharing" target="_blank">Subilas también a esta carpeta</a></p>
+    </div>
+  </section>
+
+  <section class="alias">
+    <div class="overlay">
+      <h2>¿No podés venir o no sabés qué regalarme?</h2>
+      <p>Si no puedes asistir o no sabes qué regalarme y quieres hacerlo,<br> aquí te dejo mi alias para que transfieras lo que quieras.<br><br><strong>Alias MP:</strong> stefania.2607<br><br>¡Gracias! 💖</p>
     </div>
   </section>
 
   <section class="gifts">
     <div class="overlay">
-      <h2>¿No sabés qué regalarme?</h2>
-      <p>Acá te dejo una lista de deseos ✨</p>
+      <h2>★ Te dejo ideas de regalos para los que no saben qué regalarme ★</h2>
       <ul>
-        <li>1. Perfume</li>
-        <li>2. Zapatillas</li>
-        <li>3. Pulsera</li>
-        <li>4. Auriculares</li>
-        <li>5. Remera con diseño</li>
-        <li>6. Pijama lindo</li>
-        <li>7. Almohadón decorativo</li>
-        <li>8. Cosas de papelería</li>
-        <li>9. Libros</li>
-        <li>10. Entradas para el cine</li>
-        <li>11. Set de maquillaje</li>
-        <li>12. Mochila o bolso</li>
-        <li>13. Algo hecho a mano</li>
-        <li>14. Ropa oversize</li>
-        <li>15. Lo que elijas con cariño</li>
+        <li>• Un puff (rosa).</li>
+        <li>• Acolchado de 1 plaza ej de color rosa viejo.</li>
+        <li>• Mueble tocador Hollywood con luces.</li>
+        <li>• Peluches (grandes o medianos).</li>
+        <li>• Computadora (portátil).</li>
+        <li>• Ramo de maquillaje.</li>
+        <li>• Body splash de victoria secret (de vainilla).</li>
+        <li>• Cámara de fotos térmica la que imprime.</li>
+        <li>• Espejo grande de cuerpo completo.</li>
+        <li>• Mini impresora portátil.</li>
       </ul>
     </div>
   </section>
 
   <script>
-    // Cuenta regresiva
     const countdown = () => {
       const eventDate = new Date("2025-08-02T20:00:00").getTime();
       const now = new Date().getTime();
